@@ -1,0 +1,12 @@
+
+<body>
+    <h3>Inside the Iframe</h3>
+    <button onclick="getTopMessage()">Alert Parent URL</button>
+
+    <script>
+    function getTopMessage() {
+        // Syntax to access the top-level parent window from inside a frame
+        alert("The main window URL is: " + window.top.location.href);
+    }
+    </script>
+</body>

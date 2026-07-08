@@ -6,16 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- inline js  -->
-    <button onclick="alert('hello world! from inline js file.')">click me</button>
+    <h1>This is button</h1>
+    <button onclick="createNewWindow()">Open Google</button>
+<button onclick="closeNewWindow()">Close Google</button>
+<button onclick="createNewWindow()">Open facebook</button>
+<button onclick="closeNewWindow()">Close facebook</button>
 
-    <!-- internal js file --> 
-     <script>
-        console.log("hello world from internal js file.")
-     </script>
 
-    <h1 className=" text-blue underline">This is my first js program.</h1>
 
-    <script src="string.js"></script> 
+<script>
+let myWindow;
+
+function createNewWindow() {
+    // Syntax: window.open(URL, WindowName, Specs)
+    myWindow = window.open("https://google.com", "_blank", "width=500,height=500");
+    myWindow = window.open("https://facebook.com", "_blank", "width=500,height=500");
+}
+
+function closeNewWindow() {
+    if (myWindow) {
+        myWindow.close(); // Closes the newly created window
+    }
+}
+</script>
+
 </body>
 </html>

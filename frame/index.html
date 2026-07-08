@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Main Page Context</h2>
+<button onclick="changeFrameColor()">Change Frame Background</button>
+<!-- Embedded iframe -->
+<iframe id="myIframe" src="frame.html" style="width:100%; height:200px;"></iframe>
+<script>
+function changeFrameColor() {
+    // 1. Get the iframe DOM element
+    const iframe = document.getElementById("myIframe");
+    
+    // 2. Access the iframe's internal window object
+    const iframeWindow = iframe.contentWindow;
+    
+    // 3. Modify the style of the frame's document
+    iframeWindow.document.body.style.backgroundColor = "lightblue";
+}
+</script>
+
+</body>
+</html>
